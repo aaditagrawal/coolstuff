@@ -56,8 +56,6 @@ coolstuff/
 - **Typography** - JetBrains Mono for a tech-focused look
 - **Accessibility** - Built with semantic HTML and proper contrast
 
-## 📦 Build & Deployment
-
 ### Build for Production
 
 ```bash
@@ -68,31 +66,10 @@ bun run build
 npm run build
 ```
 
-### Deploy on Vercel
-
-The easiest way to deploy is using [Vercel](https://vercel.com):
-
-1. Connect your GitHub repository to Vercel
-2. Deploy automatically on every push
-3. Custom domain support available
-
-### Other Platforms
-
-The built files in `out/` can be deployed to any static hosting service like:
-- Netlify
-- GitHub Pages
-- AWS S3 + CloudFront
-- Any web server
 
 ## 🤝 Contributing
 
-While this is primarily a personal project showcase, feel free to:
-
-1. **Fork the repository**
-2. **Create a feature branch** (`git checkout -b feature/amazing-feature`)
-3. **Commit your changes** (`git commit -m 'Add some amazing feature'`)
-4. **Push to the branch** (`git push origin feature/amazing-feature`)
-5. **Open a Pull Request**
+While this is primarily a personal project showcase, feel free to fork the repository and modify it to showcase your own projects!
 
 ## 📄 License
 
