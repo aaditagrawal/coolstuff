@@ -4,6 +4,36 @@ import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 
+// Component to render description text with clickable links
+function DescriptionWithLinks({ text, className, style }: { text: string; className?: string; style?: React.CSSProperties }) {
+  // Simple URL regex to find URLs in text
+  const urlRegex = /(https?:\/\/[^\s]+)/g;
+
+  // Split text by URLs and create React elements
+  const parts = text.split(urlRegex);
+
+  return (
+    <p className={className} style={style}>
+      {parts.map((part, index) => {
+        if (urlRegex.test(part)) {
+          return (
+            <a
+              key={index}
+              href={part}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline underline-offset-2 hover:text-blue-400 transition-colors"
+            >
+              {part}
+            </a>
+          );
+        }
+        return part;
+      })}
+    </p>
+  );
+}
+
 export default function Home() {
   return (
     <div className="relative min-h-screen px-6 py-12 sm:px-10 flex flex-col items-center">
@@ -33,15 +63,17 @@ export default function Home() {
             return (
               <Card
                 key={project.id}
-                className="flex h-full flex-col border-white/10 bg-black/20 backdrop-blur-md shadow-[8px_8px_24px_rgba(0,0,0,0.35),-8px_-8px_24px_rgba(255,255,255,0.03)] transition-transform hover:-translate-y-0.5 hover:shadow-[10px_10px_28px_rgba(0,0,0,0.4),-10px_-10px_28px_rgba(255,255,255,0.04)]"
+                className="flex h-full flex-col border-white/10 bg-black/20 backdrop-blur-md shadow-[8px_8px_24px_rgba(0,0,0,0.35),-8px_-8px_24px_rgba(255,255,255,0.03)] transition-transform hover:-translate-y-0.5 hover:shadow-[10px_10px_28px_rgba(0,0,0,0.4),-10px_-10px_28px_rgba(255,255,255,0.04)] overflow-hidden"
               >
-                <CardHeader>
+                <CardHeader className="overflow-hidden">
                   <CardTitle className="flex items-start justify-between gap-4">
                     <span>{project.title}</span>
                   </CardTitle>
-                  <CardDescription className={isHex ? undefined : color} style={isHex ? { color } : undefined}>
-                    {project.description}
-                  </CardDescription>
+                  <DescriptionWithLinks
+                    text={project.description}
+                    className={`break-words overflow-wrap-anywhere ${isHex ? '' : color}`}
+                    style={isHex ? { color, wordBreak: 'break-word', overflowWrap: 'anywhere' } : { overflowWrap: 'anywhere' }}
+                  />
                 </CardHeader>
                 <CardContent className="pt-0">
                   <div className="flex flex-wrap gap-2">

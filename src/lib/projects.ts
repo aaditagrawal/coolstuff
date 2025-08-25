@@ -25,7 +25,7 @@ export const projects: Project[] = [
     id: "tik-api",
     title: "The TIK API",
     description:
-      "An API for the food data, handled by an admin dashboard with a dynamic data extracter for the XLSX uploaded by the admins. API documenation is available at https://tikm.coolstuff.work/docs/reference",
+      "An API for the food data, handled by an admin dashboard with a dynamic data extractor for the XLSX uploaded by the admins. API documentation is available at https://tikm.coolstuff.work/docs/reference",
     url: "https://tikm.coolstuff.work",
     githubUrl: undefined,
     category: "APIs",
