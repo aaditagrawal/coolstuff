@@ -12,6 +12,16 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "mit-campus-directory",
+    title: "The MIT Manipal Campus Directory",
+    description:
+      "A website to collect and share important contact resources and data from MIT Manipal.",
+    url: "https://cd.coolstuff.work",
+    githubUrl: "https://github.com/aaditagrawal/campus-dining",
+    category: "Campus Tools",
+    tags: ["Data", "Phones", "MIT Manipal"],
+  },
+  {
     id: "tik-menu",
     title: "The TIK Menu",
     description:
