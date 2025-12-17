@@ -63,6 +63,16 @@ export const projects: Project[] = [
     descriptionColorClass: "#b0b3b8",
     showVisit: false,
   },
+  {
+    id: "mit-courses",
+    title: "MIT Courses Search",
+    description:
+      "A website for MIT students to search for and find details and reference material for their respective courses.",
+    url: "https://courses.coolstuff.work",
+    githubUrl: "https://github.com/aaditagrawal/mit-courses-data",
+    category: "Academic Tools",
+    tags: ["Search", "Courses", "Reference Material"],
+  },
 ];
 
 
