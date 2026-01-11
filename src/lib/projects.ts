@@ -12,6 +12,26 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: "mit-courses",
+    title: "MIT Courses Search",
+    description:
+      "A website for MIT students to search for and find details and reference material for their respective courses.",
+    url: "https://courses.coolstuff.work",
+    githubUrl: "https://github.com/aaditagrawal/mit-courses-data",
+    category: "Academic Tools",
+    tags: ["Search", "Courses", "Reference Material"],
+  },
+  {
+    id: "electives-allocation",
+    title: "Electives Allocation Data",
+    description:
+      "Data for Electrical Allocation for Sixth Semester Students for the Academic Year 2025 to 2026.",
+    url: "https://electives.coolstuff.work",
+    githubUrl: "https://github.com/aaditagrawal/elective-cutoffs",
+    category: "Academic Tools",
+    tags: ["Electives", "Allocation", "Sixth Semester", "2025-2026"],
+  },
+  {
     id: "mit-campus-directory",
     title: "The MIT Manipal Campus Directory",
     description:
@@ -52,6 +72,16 @@ export const projects: Project[] = [
     tags: ["VCF", "Contacts", "Data Standards"],
   },
   {
+    id: "cce-b-timetable",
+    title: "CCE-B Timetable",
+    description:
+      "Timetable for CCE-B for sixth semester for easy accessibility from anywhere.",
+    url: "https://tt.coolstuff.work",
+    githubUrl: "https://github.com/aaditagrawal/semester-timetable-v1",
+    category: "Academic Tools",
+    tags: ["Timetable", "CCE-B", "Sixth Semester"],
+  },
+  {
     id: "placement-tracker",
     title: "The Placement Tracker",
     description:
@@ -62,16 +92,6 @@ export const projects: Project[] = [
     tags: ["Internships", "MIT Manipal"],
     descriptionColorClass: "#b0b3b8",
     showVisit: false,
-  },
-  {
-    id: "mit-courses",
-    title: "MIT Courses Search",
-    description:
-      "A website for MIT students to search for and find details and reference material for their respective courses.",
-    url: "https://courses.coolstuff.work",
-    githubUrl: "https://github.com/aaditagrawal/mit-courses-data",
-    category: "Academic Tools",
-    tags: ["Search", "Courses", "Reference Material"],
   },
 ];
 
