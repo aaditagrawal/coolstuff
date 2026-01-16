@@ -25,7 +25,7 @@ export const projects: Project[] = [
     id: "electives-allocation",
     title: "Electives Allocation Data",
     description:
-      "Data for Electrical Allocation for Sixth Semester Students for the Academic Year 2025 to 2026.",
+      "Data for Elective Allocation for Sixth Semester Students for the Academic Year 2025 to 2026.",
     url: "https://electives.coolstuff.work",
     githubUrl: "https://github.com/aaditagrawal/elective-cutoffs",
     category: "Academic Tools",
