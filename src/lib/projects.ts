@@ -52,6 +52,16 @@ export const projects: Project[] = [
     tags: ["API", "Menu", "MIT Manipal"],
   },
   {
+    id: "sindhi-mess-menu",
+    title: "Sindhi Mess Menu",
+    description:
+      "A mess menu website for Sindhi mess covering their cyclic menu rotation alongside extras listed by Sindhi mess.",
+    url: "https://sindhu.coolstuff.work",
+    githubUrl: "https://github.com/aaditagrawal/sindhi-menu",
+    category: "Campus Dining",
+    tags: ["Menu", "Sindhi Mess", "Rotation", "Extras"],
+  },
+  {
     id: "tik-api",
     title: "The TIK API",
     description:
@@ -94,5 +104,4 @@ export const projects: Project[] = [
     showVisit: false,
   },
 ];
-
 
