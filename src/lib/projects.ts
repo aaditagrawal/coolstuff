@@ -92,6 +92,16 @@ export const projects: Project[] = [
     tags: ["Timetable", "CCE-B", "Sixth Semester"],
   },
   {
+    id: "contact-cards",
+    title: "Contact Cards",
+    description:
+      "A personal contact card generator that lets you build, preview, and download contact cards as PNG images with embedded vCard QR codes.",
+    url: "https://contacts.coolstuff.work",
+    githubUrl: "https://github.com/aaditagrawal/contact-cards",
+    category: "Standard File Formats",
+    tags: ["Contacts", "VCF", "QR Code", "PNG"],
+  },
+  {
     id: "placement-tracker",
     title: "The Placement Tracker",
     description:
