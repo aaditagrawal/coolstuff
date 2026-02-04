@@ -1,112 +1,76 @@
 import { projects } from "@/lib/projects";
-import { Card, CardContent, CardFooter, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { ExternalLink, Github } from "lucide-react";
-
-// Component to render description text with clickable links
-function DescriptionWithLinks({ text, className, style }: { text: string; className?: string; style?: React.CSSProperties }) {
-  // Simple URL regex to find URLs in text
-  const urlRegex = /(https?:\/\/[^\s]+)/g;
-
-  // Split text by URLs and create React elements
-  const parts = text.split(urlRegex);
-
-  return (
-    <p className={className} style={style}>
-      {parts.map((part, index) => {
-        if (urlRegex.test(part)) {
-          return (
-            <a
-              key={index}
-              href={part}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline underline-offset-2 hover:text-blue-400 transition-colors"
-            >
-              {part}
-            </a>
-          );
-        }
-        return part;
-      })}
-    </p>
-  );
-}
+import { ArrowUpRight, Github } from "lucide-react";
+import { TiltCard } from "@/components/tilt-card";
 
 export default function Home() {
   return (
-    <div className="relative min-h-screen px-6 py-12 sm:px-10 flex flex-col items-center">
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(1200px_600px_at_50%_-100px,hsla(0,0%,100%,0.08),transparent)]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_400px_at_10%_20%,hsla(210,90%,60%,0.08),transparent)]" />
-      <div className="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(800px_400px_at_90%_80%,hsla(280,90%,60%,0.06),transparent)]" />
-      <div className="pointer-events-none absolute inset-x-0 top-[-120px] -z-10 mx-auto h-[360px] w-[min(95vw,1100px)] rounded-full blur-3xl bg-[radial-gradient(closest-side,rgba(255,225,100,0.10),rgba(255,170,120,0.10),rgba(255,140,200,0.08),transparent_70%)]" />
+    <div className="min-h-screen bg-black">
+      <div className="mx-auto max-w-3xl px-6 py-24 sm:py-32">
+        <header className="mb-16">
+          <h1
+            className="text-5xl sm:text-6xl tracking-tight text-white"
+            style={{ fontFamily: "var(--font-serif)" }}
+          >
+            Cool Stuff
+          </h1>
+          <p className="mt-6 text-neutral-500">
+            Projects by{" "}
+            <a
+              href="https://aadit.cc"
+              target="_blank"
+              rel="noreferrer"
+              className="text-[#FF4D00] hover:text-[#ff6a2a]"
+            >
+              Aadit Agrawal
+            </a>
+          </p>
+        </header>
 
-      <header className="mb-10 text-center">
-        <h1 className="text-4xl sm:text-5xl font-bold tracking-tight">Cool Stuff</h1>
-        <p className="text-muted-foreground mt-2">
-          made by {""}
-          <a className="underline underline-offset-4" href="https://aadit.cc" target="_blank" rel="noreferrer">
-            Aadit Agrawal
-          </a>
-        </p>
-        <p className="mx-auto mt-4 max-w-2xl text-balance text-sm sm:text-base leading-relaxed text-white/75">
-          A showcase of projects by Aadit Agrawal — from small tools to helpful apps — crafted to make day‑to‑day life simpler and more delightful.
-        </p>
-      </header>
-
-      <section className="w-full max-w-6xl">
-        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => {
-            const color = project.descriptionColorClass;
-            const isHex = typeof color === "string" && color.startsWith("#");
-            return (
-              <Card
-                key={project.id}
-                className="flex h-full flex-col border-white/10 bg-black/20 backdrop-blur-md shadow-[8px_8px_24px_rgba(0,0,0,0.35),-8px_-8px_24px_rgba(255,255,255,0.03)] transition-transform hover:-translate-y-0.5 hover:shadow-[10px_10px_28px_rgba(0,0,0,0.4),-10px_-10px_28px_rgba(255,255,255,0.04)] overflow-hidden"
-              >
-                <CardHeader className="overflow-hidden">
-                  <CardTitle className="flex items-start justify-between gap-4">
-                    <span>{project.title}</span>
-                  </CardTitle>
-                  <DescriptionWithLinks
-                    text={project.description}
-                    className={`break-words overflow-wrap-anywhere ${isHex ? '' : color}`}
-                    style={isHex ? { color, wordBreak: 'break-word', overflowWrap: 'anywhere' } : { overflowWrap: 'anywhere' }}
-                  />
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="flex flex-wrap gap-2">
-                    {project.tags.map((tag) => (
-                      <Badge key={tag} className="border-white/15 bg-white/10">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                </CardContent>
-                <CardFooter className="mt-auto justify-between gap-3">
-                  {project.showVisit !== false ? (
-                    <Button variant="gradient" asChild>
-                      <a href={project.url} target="_blank" rel="noreferrer" className="inline-flex items-center gap-2">
-                        Visit <ExternalLink size={16} />
-                      </a>
-                    </Button>
-                  ) : (
-                    <div />
-                  )}
-                  {project.githubUrl ? (
-                    <Button variant="outline" size="icon" asChild aria-label="GitHub">
-                      <a href={project.githubUrl} target="_blank" rel="noreferrer">
+        <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
+          {projects.map((project, index) => (
+            <TiltCard key={project.id} id={project.id} defaultSelected={index === 0} className="h-full">
+              <article className="relative h-full rounded-xl border border-neutral-800 bg-neutral-950 p-5 transition-all duration-200 hover:border-[#FF4D00]/50 hover:bg-neutral-900/50 active:border-[#FF4D00] active:bg-neutral-900">
+                <div className="flex items-start justify-between gap-3 mb-3">
+                  <h2 className="text-white text-sm font-medium">
+                    {project.title}
+                  </h2>
+                  <div className="flex items-center gap-1 shrink-0">
+                    {project.githubUrl && (
+                      <a
+                        href={project.githubUrl}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-2 -m-1 text-neutral-500 hover:text-[#FF4D00] active:text-[#FF4D00] transition-colors rounded-lg hover:bg-neutral-800 active:bg-neutral-800"
+                        aria-label="View on GitHub"
+                      >
                         <Github size={18} />
                       </a>
-                    </Button>
-                  ) : null}
-                </CardFooter>
-              </Card>
-            );
-          })}
-        </div>
-      </section>
+                    )}
+                    {project.showVisit !== false && (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="p-2 -m-1 text-neutral-500 hover:text-[#FF4D00] active:text-[#FF4D00] transition-colors rounded-lg hover:bg-neutral-800 active:bg-neutral-800"
+                        aria-label="Visit project"
+                      >
+                        <ArrowUpRight size={18} />
+                      </a>
+                    )}
+                  </div>
+                </div>
+                <p className="text-neutral-500 text-xs leading-relaxed">
+                  {project.description}
+                </p>
+              </article>
+            </TiltCard>
+          ))}
+        </section>
+
+        <footer className="mt-24 pt-8 border-t border-neutral-900 text-neutral-600 text-xs">
+          <p>© {new Date().getFullYear()}</p>
+        </footer>
+      </div>
     </div>
   );
 }

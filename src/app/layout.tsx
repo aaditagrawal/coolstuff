@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "CoolStuff",
-  description: "Minimalist project showcase by Aadit",
+  title: "Cool Stuff — Aadit Agrawal",
+  description: "A curated collection of projects by Aadit Agrawal",
 };
 
 export default function RootLayout({
@@ -14,24 +13,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head />
-      <body className="antialiased">
-        <Script
-          id="jetbrains-mono"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              (function(){
-                var l = document.createElement('link');
-                l.rel='stylesheet';
-                l.href='https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&display=swap';
-                document.head.appendChild(l);
-              })();
-            `,
-          }}
+      <head>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
         />
-        {children}
-      </body>
+      </head>
+      <body>{children}</body>
     </html>
   );
 }
