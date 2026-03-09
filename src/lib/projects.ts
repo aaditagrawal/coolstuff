@@ -66,7 +66,7 @@ export const projects: Project[] = [
     title: "Sindhi Mess Menu",
     description:
       "A mess menu website for Sindhi mess covering their cyclic menu rotation alongside extras listed by Sindhi mess.",
-    url: "https://sindhu.coolstuff.work",
+    url: "https://sindhi.coolstuff.work",
     githubUrl: "https://github.com/aaditagrawal/sindhi-menu",
     category: "Campus Dining",
     tags: ["Menu", "Sindhi Mess", "Rotation", "Extras"],
