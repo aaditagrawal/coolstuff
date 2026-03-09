@@ -18,7 +18,7 @@ export const projects: Project[] = [
       "An API powered menu for Food Court 2 at MIT Manipal that dynamically shows the current/upcoming meal with a highlight, but also has menu data for the food court, powered via an API built in collaboration with The Indian Kitchen. 5000+ Daily Users. Includes support for Veg/NonVeg/Jain filtering. (TIK)",
     url: "https://fc2.coolstuff.work",
     githubUrl: "https://github.com/aaditagrawal/fc-menu",
-    category: "Campus Dining",
+    category: "Campus Directory",
     tags: ["API", "Menu", "MIT Manipal"],
   },
   {
@@ -57,7 +57,7 @@ export const projects: Project[] = [
     description:
       "A website to collect and share important contact resources and data from MIT Manipal. A crowdsourced effort, with a generate mail to warden feature included.",
     url: "https://cd.coolstuff.work",
-    githubUrl: "https://github.com/aaditagrawal/campus-dining",
+    githubUrl: "https://github.com/aaditagrawal/campus-dir",
     category: "Campus Tools",
     tags: ["Data", "Phones", "MIT Manipal"],
   },
