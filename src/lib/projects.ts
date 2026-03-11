@@ -82,6 +82,16 @@ export const projects: Project[] = [
     tags: ["API", "Admin", "XLSX", "Docs"],
   },
   {
+    id: "india-ai-impact-mapper",
+    title: "India AI Impact Summit Mapper",
+    description:
+      "A fully indexable guide to the India AI Impact Summit — event schedules, guest lists, venue mapping, and expo layout all in one place.",
+    url: "https://indiaai.aadit.cc/",
+    githubUrl: "https://github.com/aaditagrawal/india-ai-impact-mapper",
+    category: "AI Tools",
+    tags: ["AI", "Summit", "Events", "Mapping", "Expo"],
+  },
+  {
     id: "mit-courses",
     title: "MIT Courses Search",
     description:
