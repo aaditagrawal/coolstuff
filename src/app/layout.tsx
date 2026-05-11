@@ -1,5 +1,21 @@
 import type { Metadata } from "next";
+import { Instrument_Serif, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
+
+const instrumentSerif = Instrument_Serif({
+  subsets: ["latin"],
+  weight: ["400"],
+  style: ["normal", "italic"],
+  variable: "--font-serif",
+  display: "swap",
+});
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "Cool Stuff — Aadit Agrawal",
@@ -13,15 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link
-          href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap"
-          rel="stylesheet"
-        />
-      </head>
-      <body>{children}</body>
+      <body className={`${instrumentSerif.variable} ${jetbrainsMono.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

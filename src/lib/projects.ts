@@ -32,6 +32,16 @@ export const projects: Project[] = [
     tags: ["Typst", "Editor", "WASM", "Live Preview"],
   },
   {
+    id: "dgit",
+    title: "dgit",
+    description:
+      "A developer-focused Git wrapper and workflow tool that streamlines common Git operations.",
+    url: "https://dg.coolstuff.work",
+    githubUrl: "https://github.com/aaditagrawal/dgit",
+    category: "Developer Tools",
+    tags: ["Git", "CLI", "Developer Tools"],
+  },
+  {
     id: "or-free",
     title: "OR-Free",
     description:
