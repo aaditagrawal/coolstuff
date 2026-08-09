@@ -134,8 +134,7 @@ export const projects: Project[] = [
   {
     id: "cce-b-timetable",
     title: "CCE-B Timetable",
-    description:
-      "Timetable for CCE-B for sixth semester for easy accessibility from anywhere.",
+    description: "Timetable for CCE-B for sixth semester for easy accessibility from anywhere.",
     url: "https://tt.coolstuff.work",
     githubUrl: "https://github.com/aaditagrawal/semester-timetable-v1",
     category: "Academic Tools",

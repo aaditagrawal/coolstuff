@@ -35,7 +35,9 @@ export function TiltCard({ children, className = "", id, defaultSelected = false
   const [isActive, setIsActive] = useState(false);
   const [touchOrigin, setTouchOrigin] = useState({ x: 50, y: 50 });
   const [trailAngle, setTrailAngle] = useState(0);
-  const [transform, setTransform] = useState("perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)");
+  const [transform, setTransform] = useState(
+    "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)",
+  );
   const [shimmerPos, setShimmerPos] = useState(-100);
   const [isSelected, setIsSelected] = useState(false);
   const [isTouchDevice, setIsTouchDevice] = useState(false);
@@ -70,7 +72,7 @@ export function TiltCard({ children, className = "", id, defaultSelected = false
     if (!isActive) {
       return;
     }
-    
+
     let angle = 0;
     const interval = setInterval(() => {
       angle = (angle + 2) % 360;
@@ -91,7 +93,9 @@ export function TiltCard({ children, className = "", id, defaultSelected = false
         tiltTime += 0.03;
         const rotateX = Math.sin(tiltTime) * 3;
         const rotateY = Math.cos(tiltTime * 0.7) * 4;
-        setTransform(`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`);
+        setTransform(
+          `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.01)`,
+        );
       }, 30);
     }
 
@@ -207,9 +211,7 @@ export function TiltCard({ children, className = "", id, defaultSelected = false
       )}
 
       {/* Content */}
-      <div className="relative h-full">
-        {children}
-      </div>
+      <div className="relative h-full">{children}</div>
     </div>
   );
 }
