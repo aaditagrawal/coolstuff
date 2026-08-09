@@ -10,7 +10,8 @@
     "lint": "oxlint .",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "lint:fix": "oxlint . --fix"
   },
   "dependencies": {
     "@radix-ui/react-slot": "^1.3.3",
