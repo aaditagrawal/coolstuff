@@ -17,6 +17,9 @@ interface ButtonVariantOptions {
 function buttonVariants(options: ButtonVariantOptions = {}) {
   const variant = options.variant === undefined ? "default" : options.variant;
   const size = options.size === undefined ? "default" : options.size;
+  // The original Tailwind theme defines no primary/secondary/accent tokens.
+  // Default, secondary and ghost therefore had no generated variant styles.
+  // Preserve that output instead of introducing new colors during the port.
   return cn(
     stylex.props(
       uiStyles.button,
