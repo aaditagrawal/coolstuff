@@ -1,5 +1,7 @@
 "use client";
 
+import * as stylex from "@stylexjs/stylex";
+import { tiltStyles } from "@/app/home.stylex";
 import { useRef, useState, useEffect, useCallback } from "react";
 
 interface TiltCardProps {
@@ -168,7 +170,7 @@ export function TiltCard({ children, className = "", id, defaultSelected = false
     <div
       ref={cardRef}
       onTouchStart={handleTouch}
-      className={`relative overflow-hidden rounded-xl ${className}`}
+      className={`${stylex.props(tiltStyles.root).className} ${className}`}
       style={{
         transform,
         transformStyle: "preserve-3d",
@@ -179,20 +181,20 @@ export function TiltCard({ children, className = "", id, defaultSelected = false
       {isActive && (
         <>
           <div
-            className="absolute -inset-[1px] rounded-xl pointer-events-none overflow-hidden"
+            {...stylex.props(tiltStyles.trail)}
             style={{
               background: `conic-gradient(from ${trailAngle}deg at 50% 50%, #FF4D00, transparent 25%, transparent 75%, #FF4D00)`,
             }}
           />
-          <div className="absolute inset-0 rounded-xl pointer-events-none bg-neutral-950" />
+          <div {...stylex.props(tiltStyles.backing)} />
         </>
       )}
 
       {/* Shimmer effect */}
       {isActive && (
-        <div className="absolute inset-0 rounded-xl pointer-events-none overflow-hidden">
+        <div {...stylex.props(tiltStyles.shimmer)}>
           <div
-            className="absolute inset-0"
+            {...stylex.props(tiltStyles.fill)}
             style={{
               background: `linear-gradient(105deg, transparent ${shimmerPos - 30}%, rgba(255,77,0,0.08) ${shimmerPos}%, transparent ${shimmerPos + 30}%)`,
             }}
@@ -203,7 +205,7 @@ export function TiltCard({ children, className = "", id, defaultSelected = false
       {/* Cursor/touch origin glow */}
       {isActive && (
         <div
-          className="absolute inset-0 rounded-xl pointer-events-none"
+          {...stylex.props(tiltStyles.glow)}
           style={{
             background: `radial-gradient(circle at ${touchOrigin.x}% ${touchOrigin.y}%, rgba(255,77,0,0.12) 0%, transparent 50%)`,
           }}
@@ -211,7 +213,7 @@ export function TiltCard({ children, className = "", id, defaultSelected = false
       )}
 
       {/* Content */}
-      <div className="relative h-full">{children}</div>
+      <div {...stylex.props(tiltStyles.content)}>{children}</div>
     </div>
   );
 }
