@@ -1,3 +1,5 @@
+import * as stylex from "@stylexjs/stylex";
+import { styles } from "./home.stylex";
 import { projects } from "@/lib/projects";
 import { ArrowUpRight } from "lucide-react";
 import { TiltCard } from "@/components/tilt-card";
@@ -24,46 +26,43 @@ function GitHubIcon({ size = 18 }: { size?: number }) {
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-black">
-      <div className="mx-auto max-w-3xl px-6 py-24 sm:py-32">
-        <header className="mb-16">
-          <h1
-            className="text-5xl sm:text-6xl tracking-tight text-white"
-            style={{ fontFamily: "var(--font-serif)" }}
-          >
+    <div {...stylex.props(styles.root)}>
+      <div {...stylex.props(styles.container)}>
+        <header {...stylex.props(styles.header)}>
+          <h1 {...stylex.props(styles.title)} style={{ fontFamily: "var(--font-serif)" }}>
             Cool Stuff
           </h1>
-          <p className="mt-6 text-neutral-500">
+          <p {...stylex.props(styles.intro)}>
             Projects by{" "}
             <a
               href="https://aadit.cc"
               target="_blank"
               rel="noreferrer"
-              className="text-[#FF4D00] hover:text-[#ff6a2a]"
+              {...stylex.props(styles.author)}
             >
               Aadit Agrawal
             </a>
           </p>
         </header>
 
-        <section className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-stretch">
+        <section {...stylex.props(styles.grid)}>
           {projects.map((project, index) => (
             <TiltCard
               key={project.id}
               id={project.id}
               defaultSelected={index === 0}
-              className="h-full"
+              {...stylex.props(styles.fullHeight)}
             >
-              <article className="relative h-full rounded-xl border border-neutral-800 bg-neutral-950 p-5 transition-all duration-200 hover:border-[#FF4D00]/50 hover:bg-neutral-900/50 active:border-[#FF4D00] active:bg-neutral-900">
-                <div className="flex items-start justify-between gap-3 mb-3">
-                  <h2 className="text-white text-sm font-medium">{project.title}</h2>
-                  <div className="flex items-center gap-1 shrink-0">
+              <article {...stylex.props(styles.article)}>
+                <div {...stylex.props(styles.headingRow)}>
+                  <h2 {...stylex.props(styles.cardTitle)}>{project.title}</h2>
+                  <div {...stylex.props(styles.links)}>
                     {project.githubUrl && (
                       <a
                         href={project.githubUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 -m-1 text-neutral-500 hover:text-[#FF4D00] active:text-[#FF4D00] transition-colors rounded-lg hover:bg-neutral-800 active:bg-neutral-800"
+                        {...stylex.props(styles.iconLink)}
                         aria-label="View on GitHub"
                       >
                         <GitHubIcon size={18} />
@@ -74,7 +73,7 @@ export default function Home() {
                         href={project.url}
                         target="_blank"
                         rel="noreferrer"
-                        className="p-2 -m-1 text-neutral-500 hover:text-[#FF4D00] active:text-[#FF4D00] transition-colors rounded-lg hover:bg-neutral-800 active:bg-neutral-800"
+                        {...stylex.props(styles.iconLink)}
                         aria-label="Visit project"
                       >
                         <ArrowUpRight size={18} />
@@ -82,13 +81,13 @@ export default function Home() {
                     )}
                   </div>
                 </div>
-                <p className="text-neutral-500 text-xs leading-relaxed">{project.description}</p>
+                <p {...stylex.props(styles.description)}>{project.description}</p>
               </article>
             </TiltCard>
           ))}
         </section>
 
-        <footer className="mt-24 pt-8 border-t border-neutral-900 text-neutral-600 text-xs">
+        <footer {...stylex.props(styles.footer)}>
           <p>© {new Date().getFullYear()}</p>
         </footer>
       </div>
