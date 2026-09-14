@@ -1,0 +1,63 @@
+import * as stylex from "@stylexjs/stylex";
+
+export const uiStyles = stylex.create({
+  badge: {
+    display: "inline-flex",
+    alignItems: "center",
+    borderRadius: ".375rem",
+    paddingInline: ".5rem",
+    paddingBlock: ".125rem",
+    fontSize: ".75rem",
+    lineHeight: "1rem",
+    fontWeight: 500,
+    transitionProperty:
+      "color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to",
+    transitionDuration: ".15s",
+    transitionTimingFunction: "cubic-bezier(.4,0,.2,1)",
+  },
+  border: { borderWidth: "1px", borderStyle: "solid" },
+  button: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    whiteSpace: "nowrap",
+    borderRadius: ".375rem",
+    fontSize: ".875rem",
+    lineHeight: "1.25rem",
+    fontWeight: 500,
+    transitionProperty: "all",
+    transitionDuration: ".15s",
+    transitionTimingFunction: "cubic-bezier(.4,0,.2,1)",
+    outlineStyle: { default: null, ":focus-visible": "none" },
+    boxShadow: {
+      default: null,
+      ":focus-visible": "0 0 #0000, 0 0 #0000, 0 0 0 2px #fff, 0 0 0 4px currentColor, 0 0 #0000",
+    },
+    pointerEvents: { default: null, ":disabled": "none" },
+    opacity: { default: null, ":disabled": ".5" },
+  },
+  outline: { borderWidth: "1px", borderStyle: "solid", backgroundColor: "transparent" },
+  link: {
+    textUnderlineOffset: "4px",
+    textDecorationLine: { default: null, "@media (hover: hover)": { ":hover": "underline" } },
+  },
+  sizeDefault: { height: "2.25rem", paddingInline: "1rem", paddingBlock: ".5rem" },
+  sizeSm: { height: "2rem", paddingInline: ".75rem", fontSize: ".75rem", lineHeight: "1rem" },
+  sizeLg: { height: "2.5rem", paddingInline: "1.5rem" },
+  sizeIcon: { height: "2.25rem", width: "2.25rem" },
+  card: {
+    borderRadius: ".5rem",
+    borderWidth: "1px",
+    borderStyle: "solid",
+    padding: "1.5rem",
+    transitionProperty:
+      "color,background-color,border-color,outline-color,text-decoration-color,fill,stroke,--tw-gradient-from,--tw-gradient-via,--tw-gradient-to",
+    transitionDuration: ".15s",
+    transitionTimingFunction: "cubic-bezier(.4,0,.2,1)",
+  },
+  cardHeader: { "--card-header-space": ".5rem" },
+  cardTitle: { fontSize: "1rem", lineHeight: "1.5rem", fontWeight: 500, letterSpacing: "-.025em" },
+  cardDescription: { fontSize: ".875rem", lineHeight: "1.25rem" },
+  cardContent: { marginTop: "1rem" },
+  cardFooter: { marginTop: "1.5rem", display: "flex", alignItems: "center" },
+});
