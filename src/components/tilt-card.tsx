@@ -2,7 +2,7 @@
 
 import * as stylex from "@stylexjs/stylex";
 import { tiltStyles } from "@/app/home.stylex";
-import { useRef, useState, useEffect, useCallback } from "react";
+import { useRef, useState, useEffect, useCallback, type CSSProperties } from "react";
 
 interface TiltCardProps {
   children: React.ReactNode;
@@ -166,26 +166,27 @@ export function TiltCard({ children, className = "", id, defaultSelected = false
     }
   };
 
+  // Dynamic values are passed as CSS custom properties, which inherit from
+  // the root element to the effect layers that consume them via var().
+  const dynamicVars: CSSProperties & Record<`--${string}`, string> = {
+    "--tilt-transform": transform,
+    "--trail-angle": `${trailAngle}deg`,
+    "--shimmer-pos": `${shimmerPos}%`,
+    "--glow-x": `${touchOrigin.x}%`,
+    "--glow-y": `${touchOrigin.y}%`,
+  };
+
   return (
     <div
       ref={cardRef}
       onTouchStart={handleTouch}
       className={`${stylex.props(tiltStyles.root).className} ${className}`}
-      style={{
-        transform,
-        transformStyle: "preserve-3d",
-        transition: "transform 0.2s ease-out",
-      }}
+      style={dynamicVars}
     >
       {/* Animated border - using two layers for the effect */}
       {isActive && (
         <>
-          <div
-            {...stylex.props(tiltStyles.trail)}
-            style={{
-              background: `conic-gradient(from ${trailAngle}deg at 50% 50%, #FF4D00, transparent 25%, transparent 75%, #FF4D00)`,
-            }}
-          />
+          <div {...stylex.props(tiltStyles.trail)} />
           <div {...stylex.props(tiltStyles.backing)} />
         </>
       )}
@@ -193,24 +194,12 @@ export function TiltCard({ children, className = "", id, defaultSelected = false
       {/* Shimmer effect */}
       {isActive && (
         <div {...stylex.props(tiltStyles.shimmer)}>
-          <div
-            {...stylex.props(tiltStyles.fill)}
-            style={{
-              background: `linear-gradient(105deg, transparent ${shimmerPos - 30}%, rgba(255,77,0,0.08) ${shimmerPos}%, transparent ${shimmerPos + 30}%)`,
-            }}
-          />
+          <div {...stylex.props(tiltStyles.fill)} />
         </div>
       )}
 
       {/* Cursor/touch origin glow */}
-      {isActive && (
-        <div
-          {...stylex.props(tiltStyles.glow)}
-          style={{
-            background: `radial-gradient(circle at ${touchOrigin.x}% ${touchOrigin.y}%, rgba(255,77,0,0.12) 0%, transparent 50%)`,
-          }}
-        />
-      )}
+      {isActive && <div {...stylex.props(tiltStyles.glow)} />}
 
       {/* Content */}
       <div {...stylex.props(tiltStyles.content)}>{children}</div>

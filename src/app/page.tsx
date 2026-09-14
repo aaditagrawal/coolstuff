@@ -29,7 +29,7 @@ export default function Home() {
     <div {...stylex.props(styles.root)}>
       <div {...stylex.props(styles.container)}>
         <header {...stylex.props(styles.header)}>
-          <h1 {...stylex.props(styles.title)} style={{ fontFamily: "var(--font-serif)" }}>
+          <h1 {...stylex.props(styles.title)}>
             Cool Stuff
           </h1>
           <p {...stylex.props(styles.intro)}>

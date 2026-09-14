@@ -14,6 +14,7 @@ export const styles = stylex.create({
     lineHeight: 1,
     letterSpacing: "-0.025em",
     color: "#fff",
+    fontFamily: "var(--font-serif)",
   },
   intro: { marginTop: "1.5rem", color: "var(--color-neutral-500)" },
   author: { color: { default: "#FF4D00", "@media (hover: hover)": { ":hover": "#ff6a2a" } } },
@@ -92,13 +93,24 @@ export const styles = stylex.create({
 });
 
 export const tiltStyles = stylex.create({
-  root: { position: "relative", overflow: "hidden", borderRadius: ".75rem" },
+  root: {
+    position: "relative",
+    overflow: "hidden",
+    borderRadius: ".75rem",
+    transform: "var(--tilt-transform, perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1))",
+    transformStyle: "preserve-3d",
+    transitionProperty: "transform",
+    transitionDuration: ".2s",
+    transitionTimingFunction: "ease-out",
+  },
   trail: {
     position: "absolute",
     inset: "-1px",
     borderRadius: ".75rem",
     pointerEvents: "none",
     overflow: "hidden",
+    background:
+      "conic-gradient(from var(--trail-angle, 0deg) at 50% 50%, #FF4D00, transparent 25%, transparent 75%, #FF4D00)",
   },
   backing: {
     position: "absolute",
@@ -114,7 +126,19 @@ export const tiltStyles = stylex.create({
     pointerEvents: "none",
     overflow: "hidden",
   },
-  fill: { position: "absolute", inset: 0 },
-  glow: { position: "absolute", inset: 0, borderRadius: ".75rem", pointerEvents: "none" },
+  fill: {
+    position: "absolute",
+    inset: 0,
+    background:
+      "linear-gradient(105deg, transparent calc(var(--shimmer-pos, -100%) - 30%), rgba(255,77,0,0.08) var(--shimmer-pos, -100%), transparent calc(var(--shimmer-pos, -100%) + 30%))",
+  },
+  glow: {
+    position: "absolute",
+    inset: 0,
+    borderRadius: ".75rem",
+    pointerEvents: "none",
+    background:
+      "radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(255,77,0,0.12) 0%, transparent 50%)",
+  },
   content: { position: "relative", height: "100%" },
 });
