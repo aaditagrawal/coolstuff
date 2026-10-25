@@ -42,6 +42,16 @@ export const projects: Project[] = [
     tags: ["Git", "CLI", "Developer Tools"],
   },
   {
+    id: "repo-thumb",
+    title: "Repo Thumb",
+    description:
+      "Create GitHub repository covers with editable gradients, language logos, and PNG exports. Save designs in your browser or share them as links and JSON recipes.",
+    url: "https://repothumb.coolstuff.work",
+    githubUrl: "https://github.com/aaditagrawal/repo-thumb",
+    category: "Developer Tools",
+    tags: ["GitHub", "OpenGraph", "Canvas", "TypeScript"],
+  },
+  {
     id: "or-free",
     title: "OR-Free",
     description:
