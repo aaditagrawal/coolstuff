@@ -24,6 +24,8 @@ function GitHubIcon({ size = 18 }: { size?: number }) {
   );
 }
 
+const copyrightYear = new Date().getFullYear();
+
 export default function Home() {
   return (
     <div {...stylex.props(styles.root)}>
@@ -88,7 +90,7 @@ export default function Home() {
         </section>
 
         <footer {...stylex.props(styles.footer)}>
-          <p>© {new Date().getFullYear()}</p>
+          <p>© {copyrightYear}</p>
         </footer>
       </div>
     </div>
