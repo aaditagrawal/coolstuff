@@ -3,6 +3,7 @@ import { styles } from "./home.stylex";
 import { projects } from "@/lib/projects";
 import { ArrowUpRight } from "lucide-react";
 import { TiltCard } from "@/components/tilt-card";
+import { HeroAurora } from "@/components/hero-aurora";
 
 function GitHubIcon({ size = 18 }: { size?: number }) {
   return (
@@ -29,6 +30,7 @@ const copyrightYear = new Date().getFullYear();
 export default function Home() {
   return (
     <div {...stylex.props(styles.root)}>
+      <HeroAurora />
       <div {...stylex.props(styles.container)}>
         <header {...stylex.props(styles.header)}>
           <h1 {...stylex.props(styles.title)} style={{ fontFamily: "var(--font-serif)" }}>
