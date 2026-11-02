@@ -1,7 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 
 export const styles = stylex.create({
-  root: { minHeight: "100vh", backgroundColor: "#000" },
+  root: { position: "relative", isolation: "isolate", minHeight: "100vh", backgroundColor: "#000" },
   container: {
     marginInline: "auto",
     maxWidth: "48rem",

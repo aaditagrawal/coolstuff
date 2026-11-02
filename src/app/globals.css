@@ -19,3 +19,61 @@ body {
   margin-block-start: 0;
   margin-block-end: var(--card-header-space);
 }
+
+/* dithercn's shader uses the same orange as the author and project links. */
+.hero-aurora {
+  --dither-ink: #ff4d00;
+  --dither-paper: #000;
+  --dither-cell: 2px;
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: -1;
+  height: 260px;
+  overflow: hidden;
+  pointer-events: none;
+  mask-image: linear-gradient(#000 12%, transparent 65%);
+}
+
+.dither-shader {
+  position: relative;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-aurora-shader,
+.dither-fill,
+.dither-fallback {
+  position: absolute;
+  inset: 0;
+}
+
+.dither-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  image-rendering: pixelated;
+  opacity: 1;
+  transition: opacity 700ms ease-out;
+}
+
+.dither-fallback {
+  opacity: 0;
+  transition: opacity 0s 700ms;
+}
+
+.dither-shader[data-state="fallback"] > .dither-canvas {
+  opacity: 0;
+  transition-duration: 0s;
+}
+
+.dither-shader[data-state="fallback"] > .dither-fallback {
+  opacity: 1;
+  transition-delay: 0s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dither-canvas {
+    transition: none;
+  }
+}
