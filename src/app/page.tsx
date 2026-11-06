@@ -1,7 +1,7 @@
 import * as stylex from "@stylexjs/stylex";
 import { styles } from "./home.stylex";
 import { projects } from "@/lib/projects";
-import { ArrowUpRight } from "lucide-react";
+import { arrowUpRightIcon } from "@/components/arrow-up-right";
 import { TiltCard } from "@/components/tilt-card";
 import { HeroAurora } from "@/components/hero-aurora";
 
@@ -80,7 +80,7 @@ export default function Home() {
                         {...stylex.props(styles.iconLink)}
                         aria-label="Visit project"
                       >
-                        <ArrowUpRight size={18} />
+                        {arrowUpRightIcon}
                       </a>
                     )}
                   </div>
