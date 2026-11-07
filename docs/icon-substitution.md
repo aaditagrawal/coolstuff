@@ -2,7 +2,7 @@
 
 Baseline: current `main` at `9a054172d843eda123620646c4dea57b4b97f486`. The homepage consumes only Lucide's 18px ArrowUpRight. The replacement retains its exact SVG attributes, classes, paths and child keys, and removes the component/factory calls by sharing one immutable element.
 
-The arrow-only change at `4459361` preserves the current main design, with byte-identical production screenshots and homepage markup. A separate, requested correction replaces the malformed GitHub outline with the standard filled mark. That glyph change is intentional; its 18px dimensions, inherited color and parent link label remain unchanged. Styles, layout, fonts, aurora, card behavior, project data and social images are unchanged.
+The arrow-only change at `4459361` preserves the current main design, with byte-identical production screenshots and homepage markup. A separate, requested correction replaces the malformed GitHub outline with a corrected Octocat outline. That glyph change is intentional; its 18px dimensions, inherited color and parent link label remain unchanged. Styles, layout, fonts, aurora, card behavior, project data and social images are unchanged.
 
 ## Server-render measurements
 
