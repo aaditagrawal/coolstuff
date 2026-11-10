@@ -151,6 +151,56 @@ export const projects: Project[] = [
     tags: ["Timetable", "CCE-B", "Sixth Semester"],
   },
   {
+    id: "android-mirroring",
+    title: "Android Mirroring",
+    description:
+      "Use your Android phone from a native Mac window over USB or wireless ADB, with Metal rendering, shared audio and clipboard, and CLI/MCP controls for agents. Available for download on Apple silicon Macs.",
+    url: "https://github.com/aaditagrawal/Android-Mirroring/releases/latest",
+    githubUrl: "https://github.com/aaditagrawal/Android-Mirroring",
+    category: "Desktop Apps",
+    tags: ["macOS", "Android", "Swift", "Metal", "MCP"],
+  },
+  {
+    id: "peel",
+    title: "Peel",
+    description:
+      "Turn photos, GIFs, and short videos into WhatsApp sticker packs. Converts entirely on your Android phone with no account or upload required, plus pack backups and Obtainium updates.",
+    url: "https://github.com/aaditagrawal/peel/releases/latest",
+    githubUrl: "https://github.com/aaditagrawal/peel",
+    category: "Mobile Apps",
+    tags: ["Android", "WhatsApp", "Stickers", "Offline"],
+  },
+  {
+    id: "shadowroom",
+    title: "Shadowroom",
+    description:
+      "A native photo culling workspace for Linux and macOS, built in Rust. Compare frames, flag picks, rate photos, and export XMP sidecars to carry your decisions into the next editor. Early release.",
+    url: "https://github.com/aaditagrawal/shadowroom/releases",
+    githubUrl: "https://github.com/aaditagrawal/shadowroom",
+    category: "Photography Tools",
+    tags: ["Photography", "Rust", "Linux", "macOS", "XMP"],
+  },
+  {
+    id: "ophoner",
+    title: "Ophoner",
+    description:
+      "An Android AI assistant with multi-provider chat, folder-scoped file tools, shell commands, and device automation. Built with Kotlin and Jetpack Compose, with conversations stored locally.",
+    url: "https://github.com/aaditagrawal/ophoner/releases/latest",
+    githubUrl: "https://github.com/aaditagrawal/ophoner",
+    category: "AI Tools",
+    tags: ["Android", "AI", "Kotlin", "Automation"],
+  },
+  {
+    id: "mapraykot",
+    title: "MapRayKot",
+    description:
+      "A geography game with two ways to learn the world: drop a pin on a named country, or identify highlighted countries against the clock. Scores stay in your browser, with no account required.",
+    url: "https://map-ray-kot.vercel.app",
+    githubUrl: "https://github.com/aaditagrawal/MapRayKot",
+    category: "Games",
+    tags: ["Geography", "Maps", "Quiz", "Game"],
+  },
+  {
     id: "placement-tracker",
     title: "The Placement Tracker",
     description:
